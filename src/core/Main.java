@@ -1,16 +1,15 @@
 package core;
 
-/**
- * Created by tgeselle on 13/04/15.
- */
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         String os = System.getProperty("os.name").toLowerCase();
 
-        if(os.indexOf("mac") >= 0){
-            System.out.println("Mac !");
-        }else if (os.indexOf("win") >= 0){
-            System.out.println("Windows !");
+        if(os.contains("mac")){
+            Mac.run();
+        }else if (os.contains("win")){
+            Windows.run();
         }
     }
 }
